@@ -1,0 +1,22 @@
+server:
+  port: 19093
+
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:h2:mem:test;
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+    show-sql: true
+  sql:
+    init:
+      mode: always
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
